@@ -1,6 +1,6 @@
 /* General styles */
 .container {
-  max-width: 1000px;
+  max-width: 95%;
   margin: 0 auto;
 }
 
@@ -23,14 +23,14 @@
   text-decoration: none;
 }
 
-#popUp.loaderShow {
+#popUp.loader {
   background-image: url(../images/ajax_loader.gif);
   background-repeat: no-repeat;
   background-position: center center;
 }
 
 #popUp.loader .container {
-  display: ;
+  display: none;
 }
 
 #popUp .container {
@@ -59,7 +59,7 @@
 
 /* Header styles */
 header {
-  background-color: #FE052C;
+  background-color: red;
   position: fixed;
   top: 0;
   left: 0;
@@ -67,8 +67,9 @@ header {
 }
 
 header h1 {
-  color: #FFF;
+  color: white;
   padding: 10px 2%;
+  letter-spacing: .03em;
   margin: 0;
   width: 16%;
   float: left;
@@ -156,7 +157,7 @@ nav ul {
 
 nav ul li {
 	display:inline-block;
-	background-color: #CC0020;
+	background-color: red;
   position: relative;
 }
 
@@ -182,35 +183,30 @@ nav ul ul li {
 
 /* Main Section */
 #main {
-  margin-top: 65px;
+  margin-top: 60px;
 }
 
-/* Individual Article Styling */
 .article {
-  border-bottom: 1px solid #ccc;
-  transition: 0.2s all;
+  display: inline;
+
 }
 
-.article:hover {
-  padding: 0 2%;
-  background-color: #eee;
-}
-
+/*
 .article .featuredImage {
-  width: 12%;
+  width: 20%;
   float: left;
-  margin: 1.5%;
-  max-width: 60px;
+  margin: 3%;
+  max-width: 100px;
 }
 
 .article .featuredImage img {
   max-width: 100%;
-  border-radius: 50px;
+  border-radius: 3px;
 }
 
 .article .articleContent {
-  width: 70%;
-  float: left;
+  width: 80%;
+  height: 40px;
 }
 
 .article .articleContent a {
@@ -219,13 +215,14 @@ nav ul ul li {
 
 .article .articleContent h3 {
   margin-bottom: 0;
-  color: #FE052C;
+  color: red;
 }
 
 .article .articleContent h6 {
   margin-top: 0;
-  color: #666;
+  color: black;
 }
+
 
 .article .impressions {
   width: 15%;
@@ -233,5 +230,6 @@ nav ul ul li {
   font-size: 30px;
   margin-top: 15px;
   text-align: right;
-  color: #097FB2;
+  color: black;
 }
+*/
