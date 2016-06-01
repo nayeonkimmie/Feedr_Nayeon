@@ -35,10 +35,15 @@ function displayFeed(myCurrentFeed) {
 							  
 							var popupWindow = '<a href="#" class="closePopUp">x</a>';
 								popupWindow += '<div class="container">';
-								popupWindow += '<h1>' + item.data.title +'</h1>';
-								popupWindow += '<p>' + item.data.secure_media.oembed.description + '</p>';
+								popupWindow += '<h1>' + /*item.data.title*/'Hi' +'</h1>';
+								popupWindow += '<p>' + /*item.data.secure_media.oembed.description*/'How are you?' + '</p>';
 								popupWindow += '<a href="#" class="popUpAction" target="_blank">Read more from source</a></div>';
 							$('div#popUp').append(popupWindow);
+						});
+						
+						//closing popup
+						$('div#popUp').on("click", "a.closePopUp", function() {
+							$('div#popUp').hide().addClass('hidden');
 						});
 					});
 										/*
@@ -61,13 +66,7 @@ function displayFeed(myCurrentFeed) {
 								<a href="#" class="popUpAction" target="_blank">Read more from source</a>
 							</div>
 					</div>
-					*/
-					
-					//closing popup
-					$('div#popUp').on("click", "a.closePopUp", function() {
-						$('div#popUp').hide().addClass('hidden');
-					});
-					
+										
 					//search
 					$('#search').click(function() {
 						//upon clicking the search button, show the input field
@@ -75,7 +74,8 @@ function displayFeed(myCurrentFeed) {
 						//if ($('input').val() included keyword?) {
 							//show the keyword searched with articles that contain the keyword
 					});	
-					
+				
+					*/
 					
 					
 					
