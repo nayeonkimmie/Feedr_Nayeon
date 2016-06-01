@@ -19,11 +19,9 @@ $search.mouseover(function() {
 $search.keypress(function(event) {
 	if(event.which == 13) {
 		//do search
-		console.log('Hi');
 		//close the input field
 		$search.removeClass('active');
 	};
-
 });
 
 //function to run once the news source is chosen
@@ -65,9 +63,7 @@ function displayFeed(myCurrentFeed) {
 						$('div#popUp').on("click", "a.closePopUp", function() {
 							$('div#popUp').hide().addClass('hidden');
 						});
-
-
-
+						
 					});
 				},
 				error: function(response) {
