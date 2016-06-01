@@ -8,11 +8,22 @@ $("#selectSource").on('click', 'li', function() {
 });
 
 //search
+var $search = $('#search');
+$search.removeClass('active');
+$search.mouseover(function() {
+	$(this).addClass('active');
+	$(this).mouseout(function() {
+		$(this).removeClass('active');
+	});
+});
+$search.keypress(function(event) {
+	if(event.which == 13) {
+		//do search
+		console.log('Hi');
+		//close the input field
+		$search.removeClass('active');
+	};
 
-$('#search').removeClass('active').click(function() {
-	$('#search').toggleClass('active');
-	//if ($('input').val() included keyword?) {
-		//show the keyword searched with articles that contain the keyword
 });
 
 //function to run once the news source is chosen

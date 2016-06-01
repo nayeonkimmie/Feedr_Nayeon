@@ -121,6 +121,8 @@ header #search input {
   visibility: hidden;
 }
 
+
+
 header #search.active input {
   width: 160px;
   padding: 8px 10px;
