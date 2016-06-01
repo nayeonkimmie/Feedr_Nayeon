@@ -7,6 +7,13 @@ $("#selectSource").on('click', 'li', function() {
 	displayFeed(currentFeed);
 });
 
+//search
+$('#search').click(function() {
+	$('#search').toggleClass('active');
+	//if ($('input').val() included keyword?) {
+		//show the keyword searched with articles that contain the keyword
+});
+
 //function to run once the news source is chosen
 function displayFeed(myCurrentFeed) {
 	switch(myCurrentFeed) {
@@ -47,18 +54,13 @@ function displayFeed(myCurrentFeed) {
 							$('div#popUp').hide().addClass('hidden');
 						});
 
-						//search
-						$('#search').click(function() {
-							$('#search').toggleClass('active');
-							//if ($('input').val() included keyword?) {
-								//show the keyword searched with articles that contain the keyword
-						});
 
 
 					});
 				},
 				error: function(response) {
 					console.log('error');
+					$('body').append('<div>Something went wrong. Try again</div>');
 				}
 			});
 			console.log("I did Reddit");
