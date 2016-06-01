@@ -27,6 +27,7 @@ function displayFeed(myCurrentFeed) {
 							eachArticle += '<h6>' + item.data.author + '</h6></section>';
 							eachArticle += '<section class="impressions">' + item.data.ups + '</section>';
 							eachArticle += '<div class="clearfix"></div></article>';
+
 						$('#main').append(eachArticle);
 
 						//open popup
@@ -35,6 +36,7 @@ function displayFeed(myCurrentFeed) {
 							popupWindow += '<h1>' + item.data.title + '</h1>';
 							popupWindow += '<p>' + item.data + '</p>';//I can't find out the path for the content of each article. It seems like each object/article has a different path to its content.
 							popupWindow += '<a href="' + item.data.url + '" class="popUpAction" target="_blank">Read more from source</a></div>';
+
 						$('.article').click(function() {
 							$('#popUp').append(popupWindow);
 							$('#popUp').show().removeClass('hidden loader');
@@ -47,7 +49,6 @@ function displayFeed(myCurrentFeed) {
 
 						//search
 						$('#search').click(function() {
-							//upon clicking the search button, show the input field
 							$('#search').toggleClass('active');
 							//if ($('input').val() included keyword?) {
 								//show the keyword searched with articles that contain the keyword
