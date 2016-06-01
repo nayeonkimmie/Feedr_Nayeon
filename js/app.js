@@ -55,6 +55,8 @@ function displayFeed(myCurrentFeed) {
 							popupWindow += '<a href="' + item.data.url + '" class="popUpAction" target="_blank">Read more from source</a></div>';
 
 						$('.article').click(function() {
+							//just one article aka response.data.children[i]
+							
 							$('#popUp').append(popupWindow);
 							$('#popUp').show().removeClass('hidden loader');
 						});
@@ -63,7 +65,7 @@ function displayFeed(myCurrentFeed) {
 						$('div#popUp').on("click", "a.closePopUp", function() {
 							$('div#popUp').hide().addClass('hidden');
 						});
-						
+
 					});
 				},
 				error: function(response) {
