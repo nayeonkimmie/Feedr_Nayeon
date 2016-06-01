@@ -8,7 +8,8 @@ $("#selectSource").on('click', 'li', function() {
 });
 
 //search
-$('#search').click(function() {
+
+$('#search').removeClass('active').click(function() {
 	$('#search').toggleClass('active');
 	//if ($('input').val() included keyword?) {
 		//show the keyword searched with articles that contain the keyword
