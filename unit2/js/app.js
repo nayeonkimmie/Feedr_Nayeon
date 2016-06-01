@@ -36,8 +36,8 @@ function displayFeed(myCurrentFeed) {
 								popupWindow += '<h1>' + /*item.data.title*/'Hi' +'</h1>';
 								popupWindow += '<p>' + /*item.data.secure_media.oembed.description*/'How are you?' + '</p>';
 								popupWindow += '<a href="#" class="popUpAction" target="_blank">Read more from source</a></div>';
-							$('div#popUp').append(popupWindow);
-							$('div#popUp').show().removeClass('hidden');
+							$('#popUp').append(popupWindow);
+							$('#popUp').show().removeClass('hidden loader');
 						});
 						
 						//close popup
