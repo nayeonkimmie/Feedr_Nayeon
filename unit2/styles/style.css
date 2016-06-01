@@ -23,14 +23,14 @@
   text-decoration: none;
 }
 
-#popUp.loaderShow {
+#popUp.loader {
   background-image: url(../images/ajax_loader.gif);
   background-repeat: no-repeat;
   background-position: center center;
 }
 
 #popUp.loader .container {
-  display: ;
+  display: none;
 }
 
 #popUp .container {

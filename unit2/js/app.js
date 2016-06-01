@@ -1,7 +1,5 @@
-// authentication????????
-
 //Choose news source
-$("#selectSource").on('click', 'li', function() {//delegating
+$("#selectSource").on('click', 'li', function() {
 	var currentFeed = $(this).text();
 	$("#currentSource").html(currentFeed);
 	//OR $("#currentSource").html(event.target.textContent);
@@ -21,11 +19,67 @@ function displayFeed(myCurrentFeed) {
 				success: function(response) {
 					var myRedditObj = response.data.children;
 					myRedditObj.forEach(function(item) {
-						var eachArticle = $('#main').append($('<article class="article"></article>'));
-							var featuredImage = $('article.article').append($('<section class="featuredImage"><img src="images/article_placeholder_1.jpg" alt="" /></section>'));
-							var articleContent = $('article').append($('<section class="articleContent"><a href="#"><h3>' + item.data.title + '</h3></a><h6>' + item.data.author + '</h6></section>'));
-							var likes = $('article').append($('<section class="impressions">' + item.data.ups + '</section>'));
-						});
+						var eachArticle = '<article class="article">'; //each article
+							eachArticle += '<section class="featuredImage"><img src="images/article_placeholder_1.jpg" alt="" /></section>';//each objects have different struction for the images. How do I get images for its particular article?
+							eachArticle += '<section class="articleContent"><a href="#"><h3>' + item.data.title + '</h3></a>';
+							eachArticle += '<h6>' + item.data.author + '</h6></section>'; //article content
+							eachArticle += '<section class="impressions">' + item.data.ups + '</section>'; //likes
+							eachArticle += '<div class="clearfix"></div></article>'; //clearfix 
+						$('#main').append(eachArticle);
+					});
+							
+					//opening popup
+					$('.article').click(function(item) {
+						var popupWindow = '<a href="#" class="closePopUp">x</a>';
+							popupWindow += '<div class="container">';
+							popupWindow += '<h1>' + item.data.title +'</h1>';
+							popupWindow += '<p>' + item.data.secure_media.oembed.description + '</p>';
+							popupWindow += '<a href="#" class="popUpAction" target="_blank">Read more from source</a></div>';
+						$('#popUp').show().removeClass('hidden');
+						$('#popUp').append(popupWindow);
+						
+						
+					
+					/*
+					$('#main').on("click", "article", function(item) {
+						$('div#popUp').show().removeClass('hidden');
+					
+						$('div.container').append($('<h1>'));
+						//$('h1').html(item.data.title);
+						
+						$('div.container').append($('<p>').html("Content of the article"));
+						
+						//?????? $('.loader').hide();
+					*/
+					});
+					/*
+					<div id="popUp" class="loader hidden">
+						<a href="#" class="closePopUp">x</a>
+							<div class="container">
+								<h1>Title</h1>
+								<p>Story</p>
+								<a href="#" class="popUpAction" target="_blank">Read more from source</a>
+							</div>
+					</div>
+					*/
+					
+					
+					
+					
+					
+						
+					//closing popup
+					$('div#popUp').on("click", "a.closePopUp", function() {
+						$('div#popUp').hide().addClass('hidden');
+					});
+					
+					//search
+					$('#search').click(function() {
+						//upon clicking the search button, show the input field
+						$('#search').toggleClass('active');
+						//if ($('input').val() included keyword?) {
+							//show the keyword searched with articles that contain the keyword
+					});			
 				},
 				error: function(response) {
 					console.log('error');
@@ -39,31 +93,3 @@ function displayFeed(myCurrentFeed) {
 		};
 	};
 };
-
-
-//opening popup (delegation)
-$('#main').on("click", "article", function() {
-	$(this).addClass("loaderShow");
-});
-
-
-/*
-//Search function
-$('#search').mouseover(function() {
-	//upon clicking the search button, show the input field
-	$('input').show();
-	//if ($('input').val() included keyword?) {
-		//show the keyword searched with articles that contain the keyword
-	}
-});
-
-*/
-
-
-
-
-
-
-
-
-
