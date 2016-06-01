@@ -44,16 +44,17 @@ function displayFeed(myCurrentFeed) {
 						$('div#popUp').on("click", "a.closePopUp", function() {
 							$('div#popUp').hide().addClass('hidden');
 						});
+
+						//search
+						$('#search').click(function() {
+							//upon clicking the search button, show the input field
+							$('#search').toggleClass('active');
+							//if ($('input').val() included keyword?) {
+								//show the keyword searched with articles that contain the keyword
+						});
+
+
 					});
-					/*
-					//search
-					$('#search').click(function() {
-						//upon clicking the search button, show the input field
-						$('#search').toggleClass('active');
-						//if ($('input').val() included keyword?) {
-							//show the keyword searched with articles that contain the keyword
-					});
-					*/
 				},
 				error: function(response) {
 					console.log('error');
