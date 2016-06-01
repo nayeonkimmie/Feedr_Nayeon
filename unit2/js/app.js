@@ -33,7 +33,7 @@ function displayFeed(myCurrentFeed) {
 						var popupWindow = '<a href="#" class="closePopUp">x</a>';
 							popupWindow += '<div class="container">';
 							popupWindow += '<h1>' + item.data.title + '</h1>';
-							popupWindow += '<p>' + item.data + '</p>';
+							popupWindow += '<p>' + item.data + '</p>';//I can't find out the path for the content of each article. It seems like each object/article has a different path to its content.
 							popupWindow += '<a href="' + item.data.url + '" class="popUpAction" target="_blank">Read more from source</a></div>';
 						$('.article').click(function() {
 							$('#popUp').append(popupWindow);
