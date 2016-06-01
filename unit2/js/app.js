@@ -30,18 +30,17 @@ function displayFeed(myCurrentFeed) {
 						$('#main').append(eachArticle);
 						
 						//open popup
-						$('.article').click(function(item) {
-						  	$('div#popUp').show().removeClass('hidden');
-							  
+						$('.article').click(function(item) {					  
 							var popupWindow = '<a href="#" class="closePopUp">x</a>';
 								popupWindow += '<div class="container">';
 								popupWindow += '<h1>' + /*item.data.title*/'Hi' +'</h1>';
 								popupWindow += '<p>' + /*item.data.secure_media.oembed.description*/'How are you?' + '</p>';
 								popupWindow += '<a href="#" class="popUpAction" target="_blank">Read more from source</a></div>';
 							$('div#popUp').append(popupWindow);
+							$('div#popUp').show().removeClass('hidden');
 						});
 						
-						//closing popup
+						//close popup
 						$('div#popUp').on("click", "a.closePopUp", function() {
 							$('div#popUp').hide().addClass('hidden');
 						});
