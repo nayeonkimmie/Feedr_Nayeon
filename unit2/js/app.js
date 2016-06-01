@@ -20,13 +20,13 @@ function displayFeed(myCurrentFeed) {
 					var myRedditObj = response.data.children;
 					myRedditObj.forEach(function(item) {
 
-						//news feed
-						var eachArticle = '<article class="article">'; //each article
+						//article feed
+						var eachArticle = '<article class="article">';
 							eachArticle += '<section class="featuredImage"><img src="' + item.data.thumbnail + '" alt="" /></section>';
 							eachArticle += '<section class="articleContent"><a href="#"><h3>' + item.data.title + '</h3></a>';
-							eachArticle += '<h6>' + item.data.author + '</h6></section>'; //article content
-							eachArticle += '<section class="impressions">' + item.data.ups + '</section>'; //likes
-							eachArticle += '<div class="clearfix"></div></article>'; //clearfix
+							eachArticle += '<h6>' + item.data.author + '</h6></section>';
+							eachArticle += '<section class="impressions">' + item.data.ups + '</section>';
+							eachArticle += '<div class="clearfix"></div></article>';
 						$('#main').append(eachArticle);
 
 						//open popup
@@ -46,15 +46,6 @@ function displayFeed(myCurrentFeed) {
 						});
 					});
 					/*
-					<div id="popUp" class="loader hidden">
-						<a href="#" class="closePopUp">x</a>
-							<div class="container">
-								<h1>Title</h1>
-								<p>Story</p>
-								<a href="#" class="popUpAction" target="_blank">Read more from source</a>
-							</div>
-					</div>
-
 					//search
 					$('#search').click(function() {
 						//upon clicking the search button, show the input field
@@ -62,12 +53,7 @@ function displayFeed(myCurrentFeed) {
 						//if ($('input').val() included keyword?) {
 							//show the keyword searched with articles that contain the keyword
 					});
-
 					*/
-
-
-
-
 				},
 				error: function(response) {
 					console.log('error');
